@@ -1,0 +1,19 @@
+.cyan-colorful {
+  animation: colorful-font 2s infinite linear alternate;
+  color: cyan;
+  background-image: linear-gradient(45deg, cyan 10%, greenyellow 40%, pink 70%);
+  background-position: 0 0;
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes colorful-font {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 100% 0;
+  }
+}
