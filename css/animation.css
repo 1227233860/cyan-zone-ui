@@ -1,5 +1,11 @@
+.cyan-animate {
+  color: rgb(0, 162, 255);
+  padding: 5rem 0;
+  position: relative;
+  visibility: hidden;
+}
 .cyan-colorful {
-  animation: colorful-font 2s infinite linear alternate;
+  animation: colorfulFont 2s infinite linear alternate;
   color: cyan;
   background-image: linear-gradient(45deg, cyan 10%, greenyellow 40%, pink 70%);
   background-position: 0 0;
@@ -7,13 +13,47 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.cyan-opacity {
+  animation-name: cyanOpacity;
+}
+.cyan-slide-in-bottom {
+  animation-name: cyanSlideInBottom;
+}
+.cyan-slide-in-top {
+  animation-name: cyanSlideInTop;
+}
 
-@keyframes colorful-font {
+@keyframes colorfulFont {
   from {
     background-position: 0 0;
   }
-
   to {
     background-position: 100% 0;
+  }
+}
+@keyframes cyanOpacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes cyanSlideInBottom {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes cyanSlideInTop {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0);
   }
 }
