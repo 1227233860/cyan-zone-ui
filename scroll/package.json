@@ -1,0 +1,5 @@
+{
+  "name": "@cyan-zone/ui/scroll",
+  "main": "scroll.js",
+  "typings": "./index.d.ts"
+}
