@@ -1,44 +1,44 @@
+/**
+ * @license CyanZone
+ * (c) 2020 Cyan See https://github.com/1227233860/cyan-zone-ui
+ * License: MIT
+ */
 import { __View } from '@cyan-zone/ui/view';
 
 const __Scroll = (function () {
 
   const BASE_SELECTOR = '.cyan-animate';
-  let activedClass = 'scroll-active';
+  const activedClass = 'scroll-active';
 
   function __Scroll(document) {
     this._document = document;
   }
   const __scroll = new __Scroll();
-  __Scroll.prototype.prepare = function (el, selector) {
-    if (!el) {
-      console.error('prepare函数需要提供element');
-      return;
-    }
-    __Scroll.prototype._el = el;
-    activedClass = selector ? selector : activedClass;
-    // scroll(__Scroll.prototype._el);
+  /** 初始化滚动效果 */
+  __Scroll.prototype.prepare = function () {
     scrollCallback();
     addScrollListener();
   }
   const addScrollListener = function () {
-    window.addEventListener('scroll', scrollCallback);
+    document.querySelector('.cyan-animate-scrollable').addEventListener('scroll', scrollCallback);
   }
   function scrollCallback() {
-    __Scroll.prototype._el.querySelectorAll(BASE_SELECTOR).forEach(target => {
+    document.querySelectorAll(BASE_SELECTOR).forEach(target => {
       if (__View.inView(target) && !target.className.includes(activedClass)) {
         target.classList.add(activedClass);
-        var animationTypeAttr = target.getAttribute('cyan-type');
+        const animationTypeAttr = target.getAttribute('cyan-type');
         startAnimation(target);
         if (animationTypeAttr) {
+          /** 将中划线的动画类型转换为驼峰类型 */
           target.classList.add(`cyan-${animationTypeAttr.replace(/[A-Z]/g, '-$&').toLowerCase()}`);
         }
       }
     });
   }
   const startAnimation = function (el) {
-    var delay = el.getAttribute('cyan-delay');
-    var duration = el.getAttribute('cyan-duration');
-    var timingFunction = el.getAttribute('cyan-transition-timing-function');
+    const delay = el.getAttribute('cyan-delay');
+    const duration = el.getAttribute('cyan-duration');
+    const timingFunction = el.getAttribute('cyan-transition-timing-function');
     el.style.animationDelay = delay ? delay : '.1s';
     el.style.animationDuration = duration ? duration : '.3s';
     el.style.animationTimingFunction = timingFunction ? timingFunction : 'ease';
