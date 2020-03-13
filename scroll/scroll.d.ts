@@ -5,5 +5,5 @@
  */
 export declare class __Scroll {
   /** 初始化滚动效果 */
-  static prepare(): void;
+  static prepare(selector: string): void;
 }

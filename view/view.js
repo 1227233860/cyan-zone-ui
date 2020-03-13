@@ -15,14 +15,13 @@ const __View = /** @class */ (function () {
    */
   __View.prototype.inView = function (targetEl, containerEl) {
     const rect = targetEl.getBoundingClientRect();
-    containerEl = containerEl ? containerEl : window;
-    return rect.top >= 0 && rect.bottom <= containerEl.innerHeight;
+    return rect.top >= 0 && rect.bottom <= containerEl.clientHeight + 2;
   }
   /**
    * 判断指定节点是否溢出
    * @param el 目标节点
    */
-  __View.prototype.isOverflow = function(el) {
+  __View.prototype.isOverflow = function (el) {
     if (!el) {
       console.error('isOverflow函数需要提供正确的element');
       return false;
