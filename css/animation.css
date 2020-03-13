@@ -13,15 +13,6 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.cyan-opacity {
-  animation-name: cyanOpacity;
-}
-.cyan-slide-in-bottom {
-  animation-name: cyanSlideInBottom;
-}
-.cyan-slide-in-top {
-  animation-name: cyanSlideInTop;
-}
 
 @keyframes colorfulFont {
   from {
@@ -31,7 +22,7 @@
     background-position: 100% 0;
   }
 }
-@keyframes cyanOpacity {
+@keyframes opacity {
   from {
     opacity: 0;
   }
@@ -39,7 +30,7 @@
     opacity: 1;
   }
 }
-@keyframes cyanSlideInBottom {
+@keyframes slideBottom {
   from {
     transform: translateY(100%);
   }
@@ -48,7 +39,7 @@
     transform: translateY(0);
   }
 }
-@keyframes cyanSlideInTop {
+@keyframes slideTop {
   from {
     transform: translateY(-100%);
   }

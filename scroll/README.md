@@ -68,7 +68,7 @@ ngAfterViewInit(): void {
 
 |属性|描述|类型|默认值|可选值|
 |---------|--|-----|-------|--|
-|cyan-name|动画类型|enum|opacity|opacity/slideBottom/slideslideTop
+|cyan-name|动画类型|enum|opacity|opacity/slideBottom/slideTop
 |cyan-delay|动画延迟后执行|number|100(ms)|
 |cyan-duration|动画持续时间|number|500(ms)|
 |cyan-timing|动画执行的速率|string|ease-in|ease-in/ease-out/ease/ease-in-out/cubic-bazier(x2, y2, x2, y2)
